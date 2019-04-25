@@ -1,18 +1,3 @@
-/** import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-crib-listing',
-  templateUrl: './crib-listing.component.html',
-  styleUrls: ['./crib-listing.component.css']
-})
-export class CribListingComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}**/
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {Http,Response} from '@angular/http';
 import {Observable} from 'rxjs';
@@ -42,6 +27,11 @@ export class CribListingComponent implements OnInit {
       data=> this.cribs=data,
       error=>this.error=error.statusText
     );
+
+    this.cribService.newCribSubject.subscribe(
+      data => this.cribs = [data, ...this.cribs]
+    );
+
   }
 
 }

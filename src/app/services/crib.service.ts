@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable,Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CribService {
+
+  public newCribSubject = new Subject<any>();
 
   constructor(private http:Http) { }
 
@@ -15,9 +17,11 @@ export class CribService {
   }
 
   addCrib(data) {
-    return data.image = 'default-crib';
-    //this.newCribSubject.next(data);
+    data.image = 'default-crib';
+    this.newCribSubject.next(data);
   }
+
+  
 }
 
 
