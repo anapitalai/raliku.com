@@ -7,9 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CribService } from '@sly/services/crib.service';
 import { CribListingComponent } from '@sly/crib-listing/crib-listing.component';
-import { CribCardComponent } from './crib-card/crib-card.component';
-import { CribFormComponent } from './crib-form/crib-form.component';
-import { AuthComponent } from './auth/auth.component';
+import { CribCardComponent } from '@sly/crib-card/crib-card.component';
+import { CribFormComponent } from '@sly/crib-form/crib-form.component';
+import { AuthComponent } from '@sly/auth/auth.component';
+import { UtilService } from '@sly/services/util.service';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { AuthComponent } from './auth/auth.component';
     CribListingComponent,
     CribCardComponent,
     CribFormComponent,
-    AuthComponent
+    AuthComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { AuthComponent } from './auth/auth.component';
     FormsModule,
     HttpModule
   ],
-  providers: [CribService],
+  providers: [CribService,UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

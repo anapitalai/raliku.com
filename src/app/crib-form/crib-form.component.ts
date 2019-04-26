@@ -10,6 +10,7 @@ import {CribService} from '@sly/services/crib.service';
 export class CribFormComponent implements OnInit {
 
   @ViewChild('newCribForm') newCribForm: NgForm;
+  
   propertyTypes: Array<string> = ['Condo', 'Duplex', 'House'];
 
   constructor(

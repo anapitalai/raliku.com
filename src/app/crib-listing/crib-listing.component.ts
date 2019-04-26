@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators';
 
 
 import {CribService} from '@sly/services/crib.service';
-
+import {UtilService} from '@sly/services/util.service';
 
 @Component({
   selector: 'app-crib-listing',
@@ -17,8 +17,19 @@ import {CribService} from '@sly/services/crib.service';
 export class CribListingComponent implements OnInit {
 
   cribs:Array<any>;
-  error:String;
-  constructor(private http:Http, private cribService:CribService) { }
+  error: string = '';
+  sortField: string = 'price';
+  sortDirection: string = 'asc';
+  sortFields: Array<string> = [
+    'address',
+    'area',
+    'bathrooms',
+    'bedrooms',
+    'price',
+    'type'
+  ];
+  constructor(private http:Http, 
+    private cribService:CribService,private utilService:UtilService) { }
 
   ngOnInit() {
   
