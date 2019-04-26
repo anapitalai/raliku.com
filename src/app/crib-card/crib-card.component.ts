@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 
-import { Crib } from '@sly/crib';
+import { Crib } from '@sly/interfaces/crib';
 
 @Component({
   selector: 'app-crib-card',

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthComponent } from '@sly/auth/auth.component';
+import { AuthComponent } from '@sly/authentication/login/auth.component';
 
 const routes: Routes = [
   {

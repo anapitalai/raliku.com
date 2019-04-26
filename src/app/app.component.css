@@ -1,3 +1,6 @@
 .nav .btn-sm{
     margin:2px;
 }
+a{
+    cursor:pointer;
+}

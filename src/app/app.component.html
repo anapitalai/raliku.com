@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<!--<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
@@ -7,11 +7,44 @@
     </div>
 
     <u class="nav navbar-nav navbar-right">
-      <li><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+      <li *ngIf="!isLoggedIn"  data-toggle="modal" data-target="#myModal">
         Login
-      </button></li>
+      </li>
+      <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
     </u>
   </div>
+
+</nav>-->
+
+<nav class='navbar navbar-default'>
+
+  <div class='container-fluid'>
+
+    <div class='navbar-header'>
+      <a routerLink='/home' class='navbar-brand'>RALIKU INVEST</a>
+    </div>
+    <div>
+      <ul class='nav navbar-nav'>
+        <li><a routerLink='/teachers'>Members</a></li>
+      </ul>
+      <ul class='nav navbar-nav'>
+        <li><a routerLink='/dashboard'>Dashboard</a></li>
+      </ul>
+      <div class="container-fluid">
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a data-toggle="modal" data-target="#myModal">Login</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+          <li><a><img src="/app/images/ej.jpg" alt="profile image"
+                class="profile img-circle img-responsive"></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
 
 </nav>
 

@@ -9,7 +9,7 @@ import {CribService } from '@sly/services/crib.service';
 import { CribListingComponent } from '@sly/crib-listing/crib-listing.component';
 import { CribCardComponent } from '@sly/crib-card/crib-card.component';
 import { CribFormComponent } from '@sly/crib-form/crib-form.component';
-import { AuthComponent } from '@sly/auth/auth.component';
+import { AuthComponent } from '@sly/authentication/login/auth.component';
 import { UtilService } from '@sly/services/util.service';
 import { SortByPipe } from './pipes/sort-by.pipe';
 
