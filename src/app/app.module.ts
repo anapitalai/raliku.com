@@ -9,13 +9,16 @@ import {CribService } from '@sly/services/crib.service';
 import { CribListingComponent } from '@sly/crib-listing/crib-listing.component';
 import { CribCardComponent } from './crib-card/crib-card.component';
 import { CribFormComponent } from './crib-form/crib-form.component';
+import { AuthComponent } from './auth/auth.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CribListingComponent,
     CribCardComponent,
-    CribFormComponent
+    CribFormComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
