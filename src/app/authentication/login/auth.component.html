@@ -22,7 +22,7 @@
           <div *ngIf='errorMessage' class="alert alert-danger">{{errorMessage}}</div>
 
           <div class="form-group">
-            <button class="form-control" class='btn btn-info btn-sm' routerLink="/login">Login</button>
+            <button class="form-control" class='btn btn-info btn-sm'  routerLink="/login" (click)=closeModal()>Login</button>
           </div>
 
         </form>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '@sly/services/auth.service';
-
+import { Router } from '@angular/router';
+import { AuthService } from '@sly/services/auth.service';
+//import  'dom4';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +13,18 @@ import {AuthService} from '@sly/services/auth.service';
 
 export class AppComponent {
   title = 'raliku-com';
-  get isLoggedIn(){
+  test: any;
+  n:any;
+  get isLoggedIn() {
     return this.authService.isLoggedIn();
   }
-    
-    logout(){
-      this.authService.logout();
-      this.router.navigate(['/login']);
-    }
-  constructor(private authService:AuthService,
-  private router:Router) {}
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+  constructor(private authService: AuthService,
+    private router: Router) {  
+   
+  }
 }
