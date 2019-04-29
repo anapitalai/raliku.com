@@ -11,7 +11,12 @@ export class CribFormComponent implements OnInit {
 
   @ViewChild('newCribForm') newCribForm: NgForm;
   
-  propertyTypes: Array<string> = ['Condo', 'Duplex', 'House'];
+  propertyTypes: Array<string> = [
+    'Condo',
+    'Duplex',
+    'House',
+    'Unit'
+  ];
 
   constructor(
     private cribService: CribService

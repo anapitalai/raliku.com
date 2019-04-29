@@ -15,16 +15,12 @@
         <input type="text" class="form-control" placeholder="Price" name="price" ngModel required>
       </div>
       <div class="form-group col-sm-4">
-        <label for="property-type" class="">Property Type</label>
-       <!-- <select name="type" id="property-type" class="form-control" ngModel required>
-          <option *ngFor="let type of propertyTypes" [value]="type">
-          
-          </option>
-        </select>-->
-        <input type="text" class="form-control" placeholder="Type" name="type" ngModel required>
-
-        
+        <label for="type">Property Type</label>
+        <select type="text" name="type" id="type" placeholder="House" class="form-control" ngModel required>
+          <option *ngFor="let p of propertyTypes" [value]="p">{{p}}</option>
+        </select>
       </div>
+      
       <div class="form-group col-sm-6">
         <label for="description" class="">Desciption</label>
         <textarea type="text" class="form-control" placeholder="Description" name="description" ngModel required>
@@ -43,9 +39,9 @@
         <input type="text" class="form-control" placeholder="SqFt" name="area" ngModel required>
       </div>
       <div class="form-group col-sm-6">
-          <label for="Image" class="">Image</label>
-          <input type="file" class=" fix-height form-control" placeholder="Image" name="image" ngModel required>
-        </div>
+        <label for="Image" class="">Image</label>
+        <input type="file" class=" fix-height form-control" placeholder="Image" name="image" ngModel required>
+      </div>
       <div class="form-group col-sm-12">
         <button class="btn btn-primary listing-button" type="submit" ng-show="addListing">
           Add
