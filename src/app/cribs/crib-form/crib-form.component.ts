@@ -20,11 +20,19 @@ export class CribFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+ //no persistence
   onCribSubmit(data) {
     //console.log(data);
     this.cribService.addCrib(data);
     this.newCribForm.reset();
   }
+
+  //persistence
+  cribSubmit(data) {
+    //console.log(data);
+    this.cribService.addNewCrib(data);
+    this.newCribForm.reset();
+  }
+
 
 }
