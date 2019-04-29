@@ -1,12 +1,12 @@
 export interface Crib {
-    id: number,
+    id?: number,
     type: string,
-    price: number,
+    price: string,
     address: string,
     description: string,
-    bedrooms: number,
-    bathroom: number,
-    area: number,
+    bedrooms: string,
+    bathroom: string,
+    area: string,
     image: string
   }
   
