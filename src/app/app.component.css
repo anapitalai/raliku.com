@@ -6,3 +6,10 @@ a{
 }
 
 #test{color:red;}
+
+
+
+.nav li a img{
+    height: 32px;
+    width:32px;
+}

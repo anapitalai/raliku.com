@@ -21,20 +21,21 @@
   <div class='container-fluid'>
 
     <div class='navbar-header'>
-      <a routerLink='/home' class='navbar-brand'>RALIKU INVEST</a>
+      <a routerLink='/home' class='navbar-brand'>RALIKU INVESTMENT</a>
     </div>
     <div>
       <ul class='nav navbar-nav'>
-        <li><a routerLink='/teachers'>Members</a></li>
+        <li><a routerLink='/teachers'>Property</a></li>
       </ul>
       <ul class='nav navbar-nav'>
-        <li><a routerLink='/dashboard'>Dashboard</a></li>
+        <li><a routerLink='/dashboard'>Stationery|Printing</a></li>
       </ul>
       <div class="container-fluid">
         <ul class='nav navbar-nav navbar-right'>
-          <li><a data-toggle="modal" data-target="#myModal">Login</a></li>
-          <li><a (click)="logout()">Logout</a></li>
-          <li><a><img src="/app/images/ej.jpg" alt="profile image"
+          <li *ngIf="!isLoggedIn"><a data-toggle="modal" data-target="#myModal">Login</a></li>
+          <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+
+          <li><a><img src="assets/images/shane.jpg"  alt="profile image"
                 class="profile img-circle img-responsive"></a></li>
         </ul>
       </div>
@@ -49,7 +50,7 @@
 </nav>
 
 <div class="container">
-  <app-crib-form></app-crib-form>
+  <app-crib-form *ngIf="isLoggedIn"></app-crib-form>
   <app-crib-listing></app-crib-listing>
   <app-auth></app-auth>
 </div>

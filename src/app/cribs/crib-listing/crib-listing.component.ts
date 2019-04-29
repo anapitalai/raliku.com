@@ -35,6 +35,7 @@ export class CribListingComponent implements OnInit {
   
     this.cribService.getAllCribs()
     .subscribe(
+       //data=>console.log(data),
       data=> this.cribs=data,
       error=>this.error=error.statusText
     );

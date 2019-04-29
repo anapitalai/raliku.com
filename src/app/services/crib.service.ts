@@ -9,11 +9,13 @@ import { map } from 'rxjs/operators';
 export class CribService {
 
   public newCribSubject = new Subject<any>();
-
+  endpoint="http://localhost:3008/teachers";
   constructor(private http:Http) { }
 
+  /**replaces  return this.http.get('data/cribs.json').pipe(map(res => res.json())); */
   getAllCribs(){
-    return this.http.get('data/cribs.json').pipe(map(res => res.json()));
+    return this.http.get(this.endpoint)
+    .pipe(map(res => res.json().teachers));
   }
 
   addCrib(data) {
@@ -26,5 +28,3 @@ export class CribService {
 
 
 
-
-//.pipe(map((response: any) => response.json()));

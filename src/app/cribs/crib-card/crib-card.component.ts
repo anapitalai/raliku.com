@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-
+import { lb } from 'lightbox2';
 import { Crib } from '@sly/interfaces/crib';
 
 @Component({
@@ -14,5 +14,8 @@ export class CribCardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  cribs:Crib;
+  
 
 }
