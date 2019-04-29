@@ -6,42 +6,6 @@ import { Crib} from '@sly/interfaces/crib';
 import { FormBuilder,FormGroup,Validators,FormControl} from '@angular/forms';
 import {CribService} from '@sly/services/crib.service';
 
-
-/** 
-export class CribFormComponent implements OnInit {
-
-  @ViewChild('newCribForm') newCribForm: NgForm;
-  
-  propertyTypes: Array<string> = [
-    'Condo',
-    'Duplex',
-    'House',
-    'Unit'
-  ];
-
-  constructor(
-    private cribService: CribService
-    //private utilService: UtilService
-  ) { }
-
-  ngOnInit() {
-  }
- //no persistence
-  onCribSubmit(data) {
-    //console.log(data);
-    this.cribService.addCrib(data);
-    this.newCribForm.reset();
-  }
-
-  //persistence
-  cribSubmit(data) {
-    //console.log(data);
-    this.cribService.addNewCrib(data);
-    this.newCribForm.reset();
-  }
-
-
-}**/
 const uri="http://localhost:3008/teachers";
 @Component({
   selector: 'app-crib-form',
@@ -77,9 +41,6 @@ export class CribFormComponent implements OnInit {
       image:new FormControl('')
     });
   }
-
-
-
 
   createTeacher(){
     this.successMessage='';

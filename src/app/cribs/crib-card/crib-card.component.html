@@ -45,9 +45,8 @@
       <button class="btn btn-sm btn-success" *ngIf="!crib.showDetails" (click)="crib.showDetails = !crib.showDetails">
         Details
       </button>
-      <button class="btn btn-sm btn-warning">
-        Delete
-      </button>
+
+      <button (click)="cribDelete()" class="btn btn-danger btn-bg">Delete</button>
 
     </div>
 
