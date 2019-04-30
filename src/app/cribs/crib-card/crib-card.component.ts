@@ -15,7 +15,8 @@ export class CribCardComponent implements OnInit {
   constructor(private router:Router,private route:ActivatedRoute,private cribService:CribService) { }
 
 
-  cribs:Crib;
+
+
   ngOnInit() {
     let _id=this.route.snapshot.params['id'];
     this.cribService.getOneCrib(_id)
@@ -24,7 +25,7 @@ export class CribCardComponent implements OnInit {
 
     
   cribDelete(){
-    this.cribService.cribDelete(this.cribs.id)
+    this.cribService.cribDelete(this.crib._id)
     .subscribe(data=>{
       this.router.navigate(['/']);
     })

@@ -13,13 +13,15 @@ export class CribService {
 
   public newCribSubject = new Subject<any>();
   endpoint = "http://localhost:3008/teachers";
-  data: any;
+  
   constructor(private http: Http) { }
 
-  /**replaces  return this.http.get('data/cribs.json').pipe(map(res => res.json())); */
+  ngOnInit(){
+    
+  }
   getAllCribs() {
     return this.http.get(this.endpoint)
-      .pipe(map(res => res.json().teachers));
+      .pipe(map(res => res.json().cribs));
   }
 
   //add crib data without persistence
@@ -40,14 +42,14 @@ export class CribService {
   //get single contact
   getOneCrib(id): Observable<Crib> {
     return this.http.get(`${this.endpoint}/${id}`)
-      .pipe(map(res => res.json()))
+      .pipe(map(res => res.json().cribs))
       .pipe(catchError(this.handleError));
   }
 
   //update user details
   updateContact(crib: Crib): Observable<Crib> {
-    return this.http.put(`${this.endpoint}/${crib.id}`, crib)
-      .pipe(map(teacher => teacher.json()))
+    return this.http.put(`${this.endpoint}/${crib._id}`, crib)
+      .pipe(map(teacher => teacher.json().cribs))
       .pipe(catchError(this.handleError));
   }
 

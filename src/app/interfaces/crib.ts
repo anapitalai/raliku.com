@@ -1,5 +1,5 @@
 export interface Crib {
-    id?: number,
+    _id?: number,
     type: string,
     price: string,
     address: string,

@@ -13,6 +13,8 @@ import { CribFormComponent } from '@sly/cribs/crib-form/crib-form.component';
 import { AuthComponent } from '@sly/authentication/login/auth.component';
 import { UtilService } from '@sly/services/util.service';
 import { SortByPipe } from './pipes/sort-by.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { LeafletmapComponent } from './leafletmap/leafletmap.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SortByPipe } from './pipes/sort-by.pipe';
     CribCardComponent,
     CribFormComponent,
     AuthComponent,
-    SortByPipe
+    SortByPipe,
+    AdminComponent,
+    LeafletmapComponent
   ],
   imports: [
     BrowserModule,
