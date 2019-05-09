@@ -38,7 +38,7 @@ export class CribFormComponent implements OnInit {
       bedrooms:new FormControl(''),
       bathroom:new FormControl(''),
       area:new FormControl(''),
-      image:new FormControl('')
+      avatarImage:new FormControl('')
     });
   }
 

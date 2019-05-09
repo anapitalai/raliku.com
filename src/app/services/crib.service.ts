@@ -40,9 +40,9 @@ export class CribService {
 
   }
   //get single contact
-  getOneCrib(id): Observable<Crib> {
+  getOneCrib(id:number): Observable<Crib> {
     return this.http.get(`${this.endpoint}/${id}`)
-      .pipe(map(res => res.json().cribs))
+      .pipe(map(res => res.json()))
       .pipe(catchError(this.handleError));
   }
 

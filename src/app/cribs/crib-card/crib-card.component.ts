@@ -14,7 +14,7 @@ export class CribCardComponent implements OnInit {
   @Input('crib') crib: Crib;
   constructor(private router:Router,private route:ActivatedRoute,private cribService:CribService) { }
 
-
+   cribs:Crib[];
 
 
   ngOnInit() {

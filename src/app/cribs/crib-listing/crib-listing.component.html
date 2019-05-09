@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
   <div class="col-sm-12">
     <div class="panel panel-default">
       <div class="panel-body">
@@ -43,7 +43,124 @@
 
 
   <div *ngFor="let crib of cribs | sortBy: [sortField, sortDirection]">
-    <app-crib-card   [routerLink]="['/cribs',crib.id]" [crib]="crib" class="col-sm-3">
+    <app-crib-card  [crib]="crib" class="col-sm-3">
     </app-crib-card>
   </div>
   <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+
+-->
+<app-crib-form></app-crib-form>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-4">
+          <label for="sort-field">Sort By</label>
+          <select 
+            class="form-control" 
+            name="sort-field" 
+            id="sort-field" 
+            [(ngModel)]="sortField">
+            <option 
+              *ngFor="let field of sortFields" 
+              [value]="field">
+                {{ utilService.capitalize(field) }}
+              </option>
+          </select>
+        </div>
+        <div class="col-sm-4">
+          <label for="sort-direction">Sort Direction</label>
+          <div>
+            
+            <button 
+              class="btn btn-primary"
+              [ngClass]="{'btn-success': sortDirection == 'asc'}"
+              (click)="sortDirection = 'asc'">
+                Asc
+            </button>
+
+            <button
+              class="btn btn-primary margin"
+              [ngClass]="{'btn-success': sortDirection == 'desc'}"
+              (click)="sortDirection = 'desc'">
+                Desc
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div *ngIf="cribs" class="user-list row">
+  <div  class="thumbnail col-sm-3" *ngFor="let crib of cribs" >
+    <div class="img-thumbnail img-circle" id="images" [routerLink]="['/cribs',crib.id]">
+      <a href="#" data-toggle="modal"  data-target="#imageShow" ><img [src]="crib.image" alt="crib image"></a>
+      
+      
+    
+      </div>
+      <div class="caption">
+        <div *ngIf="!crib.showDetails">
+          <h4>
+            <span class="label label-primary">
+              {{ crib.type }}
+            </span>
+          </h4>
+          <h3>
+            <i class="glyphicon glyphicon-tag"></i>
+            {{ crib.price | currency:'PGK':true }}/month
+          </h3>
+          <h4>
+            <i class="glyphicon glyphicon-home"></i>
+            {{ crib.address }}
+          </h4>
+    
+          <hr>
+    
+          <button class="btn btn-sm btn-success" *ngIf="!crib.showDetails" (click)="crib.showDetails = !crib.showDetails">
+            Details
+          </button>
+    
+          <button (click)="cribDelete()" class="btn btn-danger btn-bg">Delete</button>
+    
+        </div>
+    
+        <div *ngIf="crib.showDetails">
+          <div class="details">
+            <h4>
+              <span class="label label-primary">
+                Beds: {{ crib.bedrooms }}
+              </span>
+              <span class="label label-primary">
+                Baths: {{ crib.bathrooms }}
+              </span>
+              <span class="label label-primary">
+                SqFt: {{ crib.area }}
+              </span>
+            </h4>
+    
+            <p>{{ crib.description }}</p>
+    
+            <hr>
+    
+            <button class="btn btn-sm btn-danger" (click)="crib.showDetails = !crib.showDetails">
+              Close
+            </button>
+    
+            <button class="btn btn-sm btn-success">
+              Update
+            </button>
+            <button class="btn btn-sm btn-info">
+              Show Interest
+            </button>
+    
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

@@ -21,15 +21,21 @@
   <div class='container-fluid'>
 
     <div class='navbar-header'>
-      <a routerLink='/home' class='navbar-brand'>RALIKU INVESTMENT</a>
+      <a routerLink='' class='navbar-brand'>RALIKU INVESTMENT</a>
     </div>
     <div>
       <ul class='nav navbar-nav'>
-        <li><a routerLink='/teachers'>Property</a></li>
+        <li><a routerLink='/cribs'>Property</a></li>
       </ul>
       <ul class='nav navbar-nav'>
-        <li><a routerLink='/dashboard'>Stationery|Printing</a></li>
+        <li><a routerLink='/stationery'>Stationery|Printing</a></li>
       </ul>
+      <ul class='nav navbar-nav'>
+        <li><a routerLink='/about'>About</a></li>
+      </ul>
+      <ul class='nav navbar-nav'>
+          <li><a routerLink='/map'>Map</a></li>
+        </ul>
       <div class="container-fluid">
         <ul class='nav navbar-nav navbar-right'>
           <li *ngIf="!isLoggedIn"><a data-toggle="modal" data-target="#myModal">Login</a></li>
@@ -48,11 +54,13 @@
 
 
 </nav>
-
 <div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!--<div class="container">
   <app-crib-form *ngIf="isLoggedIn"></app-crib-form>
   <app-crib-listing></app-crib-listing>
-  <!--<app-admin></app-admin>
-  <app-leafletmap></app-leafletmap>-->
+  <app-leafletmap></app-leafletmap>
   <app-auth></app-auth>
-</div>
+</div>-->

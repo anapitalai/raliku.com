@@ -1,28 +1,8 @@
 <div  class="thumbnail">
 <div class="img-thumbnail" id="images">
   <a href="#" data-toggle="modal" data-target="#imageShow" ><img [src]="crib.avatarImage" alt="crib image"></a>
-  <!--
-    modal for image display-->
-  <div class="modal fade" id="imageShow" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-              aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Image Display</h4>
-        </div>
-        <div class="modal-body">
-      
-          <img [src]="crib.avatarImage"  class="img-responsive" alt="crib image">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
-  <!--end here-->
   </div>
   <div class="caption">
     <div *ngIf="!crib.showDetails">
@@ -84,3 +64,27 @@
     </div>
   </div>
 </div>
+  
+  <!--modal for image display-->
+  <div class="modal fade" id="imageShow" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Image Display</h4>
+        </div>
+        <div class="modal-body">
+      
+          <img [src]="crib.avatarImage"  class="img-responsive" alt="crib image">
+          {{crib.type}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--end here-->

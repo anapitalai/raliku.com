@@ -1,11 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {Http,Response} from '@angular/http';
+import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Crib} from '@sly/interfaces/crib';
-
-
-
 
 import {CribService} from '@sly/services/crib.service';
 import {UtilService} from '@sly/services/util.service';
@@ -16,7 +14,7 @@ import {UtilService} from '@sly/services/util.service';
   styleUrls: ['./crib-listing.component.css']
 })
 export class CribListingComponent implements OnInit {
-  //cribs:Crib;
+  //crib:Crib;
   cribs:Crib[];
   error: string = '';
   sortField: string = 'price';
@@ -29,7 +27,7 @@ export class CribListingComponent implements OnInit {
     'price',
     'type'
   ];
-  constructor(private http:Http, 
+  constructor(private http:Http,private router:Router, 
     private cribService:CribService,private utilService:UtilService) { }
 
   ngOnInit() {
@@ -45,9 +43,10 @@ export class CribListingComponent implements OnInit {
     this.cribService.newCribSubject.subscribe(
       data => this.cribs = [data, ...this.cribs]
     );
-    
-
   }
+
+
+
 
 }
 

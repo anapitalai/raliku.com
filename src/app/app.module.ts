@@ -15,7 +15,10 @@ import { UtilService } from '@sly/services/util.service';
 import { SortByPipe } from './pipes/sort-by.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { LeafletmapComponent } from './leafletmap/leafletmap.component';
-
+import {CribsComponent} from '@sly/cribs/cribs.component';
+import { CribSingleComponent } from './cribs/crib-single/crib-single.component';
+import { StationeryComponent } from './stationery/stationery.component';
+import { StationeryListComponent } from './stationery/stationery-list/stationery-list.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,14 @@ import { LeafletmapComponent } from './leafletmap/leafletmap.component';
     CribListingComponent,
     CribCardComponent,
     CribFormComponent,
+    CribsComponent,
     AuthComponent,
     SortByPipe,
     AdminComponent,
-    LeafletmapComponent
+    LeafletmapComponent,
+    CribSingleComponent,
+    StationeryComponent,
+    StationeryListComponent
   ],
   imports: [
     BrowserModule,
