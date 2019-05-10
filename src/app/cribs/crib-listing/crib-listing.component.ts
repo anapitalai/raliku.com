@@ -16,6 +16,7 @@ import {UtilService} from '@sly/services/util.service';
 export class CribListingComponent implements OnInit {
   //crib:Crib;
   cribs:Crib[];
+  showDetails:string;
   error: string = '';
   sortField: string = 'price';
   sortDirection: string = 'asc';

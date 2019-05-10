@@ -7,6 +7,7 @@ export interface Crib {
     bedrooms: string,
     bathroom: string,
     area: string,
-    image: string
+    image: string,
+    showDetails?:string
   }
   

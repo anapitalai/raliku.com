@@ -10,12 +10,19 @@ import {StationeryComponent} from '@sly/stationery/stationery.component';
 import {StationeryListComponent} from '@sly/stationery/stationery-list/stationery-list.component';
 import {AdminComponent} from '@sly/admin/admin.component';
 import {LeafletmapComponent} from '@sly/leafletmap/leafletmap.component';
+import { ChatsComponent } from './chats/chats.component';
+import { ListAllMessagesComponent } from './chats/list-all-messages/list-all-messages.component';
+
 const routes: Routes = [
   {
     path:'',
     redirectTo:'/cribs',
     pathMatch:'full'
   },
+  {
+    path:'login',
+    component:AuthComponent
+  },  
   {
     path:'about',
     component:AdminComponent
@@ -49,9 +56,15 @@ const routes: Routes = [
   ]
 },
 {
-  path:'login',
-  component:AuthComponent
-},
+  path:'chat',
+  component:ChatsComponent,
+  children:[
+    {
+      path:'',
+      component:ListAllMessagesComponent
+    }
+  ]
+}
 
 ];
 

@@ -19,6 +19,8 @@ import {CribsComponent} from '@sly/cribs/cribs.component';
 import { CribSingleComponent } from './cribs/crib-single/crib-single.component';
 import { StationeryComponent } from './stationery/stationery.component';
 import { StationeryListComponent } from './stationery/stationery-list/stationery-list.component';
+import { ChatsComponent } from './chats/chats.component';
+import { ListAllMessagesComponent } from './chats/list-all-messages/list-all-messages.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { StationeryListComponent } from './stationery/stationery-list/stationery
     LeafletmapComponent,
     CribSingleComponent,
     StationeryComponent,
-    StationeryListComponent
+    StationeryListComponent,
+    ChatsComponent,
+    ListAllMessagesComponent
   ],
   imports: [
     BrowserModule,

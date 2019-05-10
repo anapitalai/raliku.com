@@ -30,6 +30,7 @@ export class CribCardComponent implements OnInit {
       this.router.navigate(['/']);
     })
   }
+
   
 
 }
